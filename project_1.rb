@@ -14,7 +14,7 @@ name = gets.chomp
 puts "Введите вашу фамилию"
 surname = gets.chomp
 
-puts "Введите вашу возраст"
+puts "Введите ваш возраст"
 age = gets.to_i
 
 def gree1(name,surname,age)
