@@ -1,7 +1,7 @@
 def menu
 
 	if File.exists?('D:\balance.txt') == true
-		file_data = File.read("balance.txt")
+		file_data = File.read('D:\balance.txt')
 		@f = file_data.to_f
     	else
     	@f = 100.0
