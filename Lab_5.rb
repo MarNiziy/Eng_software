@@ -35,7 +35,6 @@ while (connection = server.accept)
   pathway, full_path = request.split(' ')
   path = full_path.split('/')[1]
  
-  next unless pathway == 'GET'
   if full_path.split('/')[1].include?('?')
     method = path.split('?')[0]
     value = path.split('?')[1].split('=')[1].to_f
