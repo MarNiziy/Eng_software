@@ -1,5 +1,4 @@
 1################
-```
 n = 1
 
 while n <= 10
@@ -39,6 +38,49 @@ arr = [3, 5, 9, 34]
 
 arr.each_with_index do |el, i|
   puts "#{el} -> #{i}"
+end
+
+4#######Написать аналоги first and last для строк и для массивов
+class Array
+  def my_first
+    self[0]
+  end
+
+  def my_last
+    self[-1]
+  end
+end
+
+class String
+  def my_first
+   arr_char = self.split(//)
+   arr_char[0]
+  end
+
+  def my_last
+   arr_char = self.split(//)
+   arr_char[-1]
+  end
+end
+
+5#########Программа для сравнения двух строк
+def match_string(str_1, str_2)
+  return if str_1.size != str_2.size
+
+  arr_char_1 = str_1.split(//)
+  arr_char_2 = str_2.split(//)
+
+  n = 0
+
+  while n <= str_1.size
+    if arr_char_1[n] != arr_char_2[n]
+      return false
+    else
+     n+= 1
+    end
+  end
+
+  true
 end
 
 6#########
@@ -129,4 +171,3 @@ class String
     self
   end
 end
-```
