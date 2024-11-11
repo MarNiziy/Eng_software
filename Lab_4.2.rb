@@ -38,26 +38,31 @@ class PostsController
   def show
     print 'Введите идентификатор поста для просмотра: '
     k = gets.to_i
+
     puts @posts[k]
   end
 
   def create
   	print 'Введите текст поста: '
     @posts << gets.chomp
+
     @posts.each_with_index{|val,index|puts "#{index}.#{val}"}
   end
 
   def update
   	print 'Введите идентификатор поста для обновления: '
     k = gets.to_i
+
     print 'Введите новый текст поста: '
     n = gets.chomp
+
     @posts[k] = n
   end
 
   def destroy
   	print 'Введите идентификатор поста для удаления: '
     k = gets.to_i
+
     @posts.delete_at(k)
   end
 end
@@ -76,11 +81,13 @@ class CommentsController
   def show
     print 'Введите идентификатор поста для комментария: '
     n = gets.to_i
+
     puts @comments[n]
   end
 
   def create
   	print 'Введите текст комментария: '
+
     @comments << gets.chomp
     @comments.each_with_index{|val,index|puts "#{index}.#{val}"}
   end
@@ -88,8 +95,10 @@ class CommentsController
   def update
   	print 'Введите идентификатор комментария для обновления: '
     n = gets.to_i
+
     print 'Введите новый текст комментария: '
     s = gets.chomp
+
     @comments[n] = s
   end
 
@@ -114,11 +123,11 @@ class Router
       @choise = gets.chomp
 
       if @choise == '1'
-      PostsController.connection(@routes['posts'])
+        PostsController.connection(@routes['posts'])
       elsif @choise == '2'
-      CommentsController.connection(@routes['comments']) 
+        CommentsController.connection(@routes['comments']) 
       elsif @choise == 'q'
-      break
+        break
       end
     end
 
@@ -137,6 +146,7 @@ class Router
       'DELETE' => controller.method(:destroy)
     }
   end
+
   def resources1(klass, keyword)
     controller = klass.new
     @routes[keyword] = {
