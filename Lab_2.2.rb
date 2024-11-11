@@ -15,4 +15,4 @@ def pr4
   puts pokemon
 end
 
-pr4 
+pr4
