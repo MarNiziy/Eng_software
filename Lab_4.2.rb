@@ -43,14 +43,14 @@ class PostsController
   end
 
   def create
-  	print 'Введите текст поста: '
+    print 'Введите текст поста: '
     @posts << gets.chomp
 
     @posts.each_with_index{|val,index|puts "#{index}.#{val}"}
   end
 
   def update
-  	print 'Введите идентификатор поста для обновления: '
+    print 'Введите идентификатор поста для обновления: '
     k = gets.to_i
 
     print 'Введите новый текст поста: '
@@ -60,7 +60,7 @@ class PostsController
   end
 
   def destroy
-  	print 'Введите идентификатор поста для удаления: '
+    print 'Введите идентификатор поста для удаления: '
     k = gets.to_i
 
     @posts.delete_at(k)
@@ -86,14 +86,14 @@ class CommentsController
   end
 
   def create
-  	print 'Введите текст комментария: '
+    print 'Введите текст комментария: '
 
     @comments << gets.chomp
     @comments.each_with_index{|val,index|puts "#{index}.#{val}"}
   end
 
   def update
-  	print 'Введите идентификатор комментария для обновления: '
+    print 'Введите идентификатор комментария для обновления: '
     n = gets.to_i
 
     print 'Введите новый текст комментария: '
@@ -103,7 +103,7 @@ class CommentsController
   end
 
   def destroy
-  	print 'Введите идентификатор комментария для удаления: '
+    print 'Введите идентификатор комментария для удаления: '
     n = gets.to_i
     @comments.delete_at(n)
   end
